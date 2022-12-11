@@ -1,0 +1,39 @@
+<div id="formulario">
+  <form>
+    <div class="group-input">
+      <span class="icon-input"><i> array 1</i></span>
+      <input type="text" [(ngModel)]="array1" class="data-input" name="array1">
+    </div>
+    <div class="group-input">
+      <span class="icon-input"><i>array 2</i></span>
+      <input type="text" [(ngModel)]="array2" class="data-input" name="array2">
+    </div>
+    <div class="group-input">
+      <span class="icon-input"><i>X</i></span>
+      <input type="text" [(ngModel)]="xValue" class="data-input" name="xValue">
+    </div>
+  </form>
+
+  <div class="group-buttons">
+    <div class="buttons linear-regression-button" (click)="LinearRegression()">
+      <i>Linear Regression</i>
+    </div>
+    <div class="buttons correlation-coefficients-button" (click)="CorrelationCoefficients()">
+      <i>Correlation Coefficients</i>
+    </div>
+    <div *ngIf="beta1" class="buttons computeY-button" (click)="computeY()">
+      <i>Compute Y</i>
+    </div>
+  </div>
+  <div id="result-box">
+    <div class="linear-regression-container">
+      <div class="b1Result result"><span>Beta One: </span>{{ beta1 }}</div>
+      <div class="b0Result result"><span>Beta Zero: </span>{{ beta0 }}</div>
+      <div *ngIf="yResult" class="yResult result"><span>Y Value: </span>{{ yResult }}</div>
+    </div>
+    <div class="correlation-coefficients-container">
+      <div class="coefficientR_result result"><span>r: </span>{{ r }}</div>
+      <div class="coefficientR2_resultresult"><span>r2: </span>{{ r2 }}</div>
+    </div>
+  </div>
+</div>
